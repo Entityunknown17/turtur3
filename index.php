@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>TurTur3</title>
+        <title>Tuts+ Chat Application</title>
         <meta name="description" content="TurTur3" />
         <link rel="stylesheet" href="styles.css" />
     </head>
