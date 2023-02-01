@@ -3,7 +3,7 @@ session_start();
 if(isset($_GET['logout'])){    
 	
 	//Simple exit message 
-    $logout_message = "<div class='msgln'><span class='left-info'>User <b class='user-name-left'>". $_SESSION['name'] ."</b> has left the chat session.</span><br></div>";
+    $logout_message = "<div class='msgln'><b class='user-name'>". $_SESSION['name'] ."</b>has disconnected </span><br></div>";
     file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
 	
 	session_destroy();
@@ -14,13 +14,13 @@ if(isset($_POST['enter'])){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
     }
     else{
-        echo '<span class="error">Please type in a name</span>';
+        echo '<span class="error">Please enter a name</span>';
     }
 }
 function loginForm(){
     echo 
     '<div id="loginform"> 
-<p>Please enter your name to continue!</p> 
+<p>Please enter your name to continue</p> 
 <form action="index.php" method="post"> 
 <label for="name">Name &mdash;</label> 
 <input type="text" name="name" id="name" /> 
@@ -46,8 +46,8 @@ function loginForm(){
     ?>
         <div id="wrapper">
             <div id="menu">
-                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+                <p class="welcome">Hello, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="logout"><a id="exit" href="#">Disconnect</a></p>
             </div>
             <div id="chatbox">
             <?php
@@ -87,9 +87,9 @@ function loginForm(){
                         }
                     });
                 }
-                setInterval (loadLog, 2500);
+                setInterval (loadLog, 1000);
                 $("#exit").click(function () {
-                    var exit = confirm("Are you sure you want to end the session?");
+                    var exit = confirm("Are you sure you want to disconnect?");
                     if (exit == true) {
                     window.location = "index.php?logout=true";
                     }

@@ -1,3 +1,18 @@
+@font-face {
+  font-family: ubuntuR;
+  src: url(/ubuntu/UbuntuMono-R.ttf);
+}
+@font-face {
+  font-family: ubuntuB;
+  src: url(/ubuntu/UbuntuMono-B.ttf);
+}
+@font-face {
+  font-family: gameplay;
+  src: url(Gameplay.ttf);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +20,12 @@
   
   body {
     margin: 20px auto;
-    font-family: "Lato";
-    font-weight: 300;
+    font-family: "ubuntuR";
+    font-weight: 200;
+    letter-spacing: normal;
+    background-color: #000000b0;
+    color: white;
+    letter-spacing: 1px;
   }
   
   form {
@@ -22,7 +41,7 @@
   }
   
   input {
-    font-family: "Lato";
+    font-family: "ubuntuR";
   }
   
   a {
@@ -38,8 +57,8 @@
   #loginform {
     margin: 0 auto;
     padding-bottom: 25px;
-    background: #eee;
-    width: 600px;
+    background: rgb(117, 117, 117);
+    width: 50vw;
     max-width: 100%;
     border: 2px solid #212121;
     border-radius: 4px;
@@ -61,9 +80,9 @@
     margin: 0 auto;
     margin-bottom: 25px;
     padding: 10px;
-    background: #fff;
-    height: 300px;
-    width: 530px;
+    background: rgb(119, 119, 119);
+    height: 50vh;
+    width: 48vw;
     border: 1px solid #a7a7a7;
     overflow: auto;
     border-radius: 4px;
@@ -73,23 +92,28 @@
   #usermsg {
     flex: 1;
     border-radius: 4px;
-    border: 1px solid #ff9800;
+    border: 1px solid #acacac;
+    font-family: ubuntuR;
+
   }
   
   #name {
     border-radius: 4px;
-    border: 1px solid #ff9800;
+    border: 1px solid #acacac;
     padding: 2px 8px;
+    font-family: ubuntuR;
   }
   
   #submitmsg,
   #enter{
-    background: #ff9800;
-    border: 2px solid #e65100;
+    background: #000000;
+    border: 2px solid #000000;
     color: white;
     padding: 4px 10px;
     font-weight: bold;
     border-radius: 4px;
+    font-family: ubuntuR;
+    letter-spacing: 2px;
   }
   
   .error {
@@ -107,37 +131,37 @@
   
   a#exit {
     color: white;
-    background: #c62828;
+    background: #000000;
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
+    letter-spacing: 2px;
   }
   
   .msgln {
     margin: 0 0 5px 0;
+    font-family: ubuntuB;
   }
   
   .msgln span.left-info {
-    color: orangered;
+    color: rgb(255, 255, 255);
   }
   
   .msgln span.chat-time {
-    color: #666;
-    font-size: 60%;
+    color: rgb(224, 224, 224);
+    font-size: 70%;
     vertical-align: super;
   }
   
   .msgln b.user-name, .msgln b.user-name-left {
     font-weight: bold;
-    background: #546e7a;
+    background: rgb(73, 73, 73);
     color: white;
     padding: 2px 4px;
     font-size: 90%;
     border-radius: 4px;
     margin: 0 5px 0 0;
+    letter-spacing: 2px;
   }
   
-  .msgln b.user-name-left {
-    background: orangered;
-  }
   
