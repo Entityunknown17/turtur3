@@ -6,6 +6,8 @@ if(isset($_GET['logout'])){
     $logout_message = "<div class='msgln'><b class='user-name'>". $_SESSION['name'] ."</b>has disconnected </span><br></div>";
     file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
 	
+    echo "getcwd()";
+
 	session_destroy();
 	header("Location: index.php"); //Redirect the user 
 }
