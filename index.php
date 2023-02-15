@@ -6,7 +6,6 @@ if(isset($_GET['logout'])){
     $logout_message = "<div class='msgln'><b class='user-name'>". $_SESSION['name'] ."</b>has disconnected </span><br></div>";
     file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
 	
-    echo "getcwd()";
 
 	session_destroy();
 	header("Location: index.php"); //Redirect the user 
@@ -36,6 +35,7 @@ function loginForm(){
     <head>
         <meta charset="utf-8" />
         <title>TurTur3</title>
+        <link rel="icon" type="image/x-icon" href="turTurIcon.ico">
         <meta name="description" content="TurTur3" />
         <link rel="stylesheet" href="styles.css" />
     </head>
@@ -89,7 +89,7 @@ function loginForm(){
                         }
                     });
                 }
-                setInterval (loadLog, 1000);
+                setInterval (loadLog, 500);
                 $("#exit").click(function () {
                     var exit = confirm("Are you sure you want to disconnect?");
                     if (exit == true) {
